@@ -15,7 +15,7 @@
 package main
 
 import (
-	xcaddycmd "github.com/caddyserver/xcaddy/cmd"
+	xcaddycmd "github.com/xlp/xcaddy/cmd"
 )
 
 func main() {

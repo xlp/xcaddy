@@ -27,8 +27,8 @@ import (
 	"text/template"
 	"time"
 
-	"github.com/caddyserver/xcaddy/internal/utils"
 	"github.com/google/shlex"
+	"github.com/xlp/xcaddy/internal/utils"
 )
 
 func (b Builder) newEnvironment(ctx context.Context) (*environment, error) {
@@ -164,7 +164,7 @@ nextPlugin:
 
 	// doing an empty "go get -d" can potentially resolve some
 	// ambiguities introduced by one of the plugins;
-	// see https://github.com/caddyserver/xcaddy/pull/92
+	// see https://github.com/xlp/xcaddy/pull/92
 	err = env.execGoGet(ctx, "", "", "", "")
 	if err != nil {
 		return nil, err
@@ -285,7 +285,7 @@ func (env environment) runCommand(ctx context.Context, cmd *exec.Cmd, timeout ti
 // Caddy module/version we're building against; this will prevent the
 // plugin module from causing the Caddy version to upgrade, if the plugin
 // version requires a newer version of Caddy.
-// See https://github.com/caddyserver/xcaddy/issues/54
+// See https://github.com/xlp/xcaddy/issues/54
 func (env environment) execGoGet(ctx context.Context, modulePath, moduleVersion, caddyModulePath, caddyVersion string) error {
 	mod := modulePath
 	if moduleVersion != "" {

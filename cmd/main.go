@@ -30,8 +30,8 @@ import (
 	"runtime/debug"
 	"strings"
 
-	"github.com/caddyserver/xcaddy"
-	"github.com/caddyserver/xcaddy/internal/utils"
+	"github.com/xlp/xcaddy"
+	"github.com/xlp/xcaddy/internal/utils"
 )
 
 var (
@@ -402,7 +402,7 @@ func goModule() *debug.Module {
 		// TODO: track related Go issue: https://github.com/golang/go/issues/29228
 		// once that issue is fixed, we should just be able to use bi.Main... hopefully.
 		for _, dep := range bi.Deps {
-			if dep.Path == "github.com/caddyserver/xcaddy" {
+			if dep.Path == "github.com/xlp/xcaddy" {
 				return dep
 			}
 		}
